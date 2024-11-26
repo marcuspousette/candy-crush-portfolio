@@ -2,6 +2,8 @@ import React from 'react';
 import swirlBall from '../assets/swirlBall-2x.png';
 import ball from '../assets/Purple glass ball with swirls 2x.png';
 import { Box, Stack, Button, Typography } from '@mui/material';
+import CustomButton from './CustomButton';
+import CheckIcon from '@mui/icons-material/Check';
 
 export default function Hero() {
   return (
@@ -33,43 +35,63 @@ export default function Hero() {
           utan att behöva investera i dyra system.
         </Typography>
         <Stack direction={'row'} spacing={2}>
-          <Button variant="contained">Ta kontakt</Button>
-          <Button variant="outlined" color="inherit">
+          <CustomButton>Ta kontakt</CustomButton>
+          <Button variant="outlined" color="primary">
             Se Projekt
           </Button>
         </Stack>
+        <Stack direction={{ xs: 'col', md: 'row' }} spacing={2}>
+          <Stack direction={'row'} spacing={1}>
+            <CheckIcon color="primary" />
+            <Typography variant="body1" color="text.secondary">
+              1 000+ timmar kodat
+            </Typography>
+          </Stack>
+          <Stack direction={'row'} spacing={1}>
+            <CheckIcon color="primary" />
+
+            <Typography variant="body1" color="text.secondary">
+              Certifierad webbutvecklare
+            </Typography>
+          </Stack>
+        </Stack>
       </Stack>
       <Box sx={{ width: { sm: '100%', md: '50%' }, position: 'relative' }}>
-        <img
+        <Box
+          component={'img'}
           src={swirlBall}
           alt="Ball"
           width={'100%'}
-          style={{ zIndex: '-1' }}
+          sx={{
+            zIndex: '-1',
+            display: { xs: 'none', sm: 'none', md: 'block' },
+          }}
         />
-        <img
+
+        <Box
+          component={'img'}
+          src={ball}
+          alt="Ball"
+          width={'100%'}
+          sx={{
+            display: { xs: 'block', sm: 'block', md: 'none' },
+          }}
+        />
+
+        <Box
+          component={'img'}
           src={ball}
           alt="Ball"
           width={'130%'}
-          style={{
+          sx={{
             position: 'absolute',
             left: '-31%',
             top: '-10%',
             zIndex: '1',
+            display: { xs: 'none', sm: 'none', md: 'block' },
           }}
         />
       </Box>
-      {/* <img
-        src={swirlBall}
-        alt="Marcus Pousette"
-        width={'50%'}
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: '64px',
-          minHeight: 'calc(100vh - 64px)',
-          zIndex: -2,
-        }}
-      /> */}
     </Stack>
   );
 }

@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Container } from '@mui/material';
 import logo from '../assets/logo-full-white.png';
 import { useNavigate, Link } from 'react-router-dom';
-
+import CustomButton from './CustomButton';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -56,7 +56,7 @@ export default function Navbar(props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="background" elevation={2}>
+      <AppBar position="static" color="transparent" elevation={2}>
         <Container>
           <Toolbar
             sx={{
@@ -77,30 +77,39 @@ export default function Navbar(props) {
               <Button
                 onClick={() => nav('/about')}
                 variant="text"
-                color="inherit"
+                sx={{ color: 'text.primary' }}
               >
-                About
+                Om mig
               </Button>
               <Button
                 onClick={() => nav('/projects')}
                 variant="text"
-                color="inherit"
+                sx={{ color: 'text.primary' }}
               >
-                Projects
+                Projekt
               </Button>
-              <Button onClick={() => {}} variant="outlined" color="inherit">
-                CV
-              </Button>
-              <Button onClick={() => {}} variant="contained" color="primary">
-                Contact
+              <Button
+                onClick={() => nav('/contact')}
+                variant="text"
+                sx={{ color: 'text.primary' }}
+              >
+                Kontakt
               </Button>
             </Stack>
+            <CustomButton
+              onClick={() => {}}
+              sx={{ display: { sm: 'none', xs: 'none', md: 'block' } }}
+            >
+              Hämta CV
+            </CustomButton>
             <IconButton
-              color="inherit"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ display: { sm: 'block', md: 'none' } }}
+              sx={{
+                color: 'text.primary',
+                display: { sm: 'block', md: 'none' },
+              }}
             >
               <MenuIcon />
             </IconButton>

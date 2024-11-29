@@ -1,19 +1,19 @@
-import React from "react";
-import Hidden from "@mui/material/Hidden";
-import { Box, Stack, Typography, Avatar, Container } from "@mui/material";
-import headshot from "../assets/mac-hero.png";
-import leftImg from "../assets/10.png";
-import rightImg from "../assets/07.png";
+import React from 'react';
+import Hidden from '@mui/material/Hidden';
+import { Box, Stack, Typography, Avatar, Container } from '@mui/material';
+import headshot from '../assets/mac-hero.png';
+import leftImg from '../assets/10.png';
+import rightImg from '../assets/07.png';
 
 export default function ReviewSection() {
   return (
     <Box
       sx={{
-        position: "relative",
-        minHeight: "500px",
-        display: "flex",
-        alignItems: "start",
-        paddingTop: "50px",
+        position: 'relative',
+        minHeight: '500px',
+        display: 'flex',
+        alignItems: 'start',
+        paddingTop: '50px',
       }}
     >
       <Hidden mdDown>
@@ -21,10 +21,10 @@ export default function ReviewSection() {
           src={rightImg}
           alt=""
           style={{
-            position: "absolute",
-            right: "-67px",
-            width: "500px",
-            bottom: "20px",
+            position: 'absolute',
+            right: '-67px',
+            width: '500px',
+            bottom: '20px',
           }}
         />
       </Hidden>
@@ -33,10 +33,10 @@ export default function ReviewSection() {
           src={leftImg}
           alt=""
           style={{
-            position: "absolute",
-            left: "-241px",
-            width: "500px",
-            top: "0px",
+            position: 'absolute',
+            left: '-241px',
+            width: '500px',
+            top: '0px',
           }}
         />
       </Hidden>
@@ -45,27 +45,27 @@ export default function ReviewSection() {
           src={leftImg}
           alt=""
           style={{
-            position: "absolute",
-            left: "-150px",
-            width: "300px",
-            bottom: "0px",
+            position: 'absolute',
+            left: '-150px',
+            width: '300px',
+            bottom: '0px',
           }}
         />
       </Hidden>
 
       <Container maxWidth="md">
         <Stack
-          direction={"column"}
-          justifyContent={"center"}
-          alignItems={"center"}
+          direction={'column'}
+          justifyContent={'center'}
+          alignItems={'center'}
         >
           <Typography
-            color={"text.primary"}
+            color={'text.primary'}
             variant="subtitle2"
             sx={{
-              textAlign: "center",
-              fontSize: "1.25rem",
-              marginBottom: "32px",
+              textAlign: 'center',
+              fontSize: '1.25rem',
+              marginBottom: '32px',
             }}
           >
             "Marcus's expertise in page speed optimization has greatly improved
@@ -75,7 +75,7 @@ export default function ReviewSection() {
           <Avatar
             alt="John Doe"
             src={headshot}
-            sx={{ width: 56, height: 56, marginBottom: "16px" }}
+            sx={{ width: 56, height: 56, marginBottom: '16px' }}
           />
           <Typography variant="h5">John Doe</Typography>
           <Typography variant="subtitle1" gutterBottom>

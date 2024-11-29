@@ -7,6 +7,7 @@ import img from '../assets/small-glass-ball.png';
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
   backgroundImage: `url(${img})`,
+  width: 'fit-content',
   filter: 'brightness(1)',
   transition: 'filter 0.2s',
   border: 'solid 1px #ffffff50',

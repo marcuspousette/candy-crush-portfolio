@@ -1,4 +1,4 @@
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import Navbar from './Navbar';
 import { Outlet } from 'react-router-dom';
 import bg1 from '../assets/square-bg.png';
@@ -20,9 +20,7 @@ const RootLayout = () => {
       <Box component="img" src={bg1} alt="" sx={bgStyle(64)} />
       <Box component="img" src={bg2} alt="" sx={bgStyle(0)} />
       <main>
-        <Container>
-          <Outlet />
-        </Container>
+        <Outlet />
       </main>
     </Box>
   );

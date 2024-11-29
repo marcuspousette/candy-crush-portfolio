@@ -35,10 +35,12 @@ export const themeOptions = {
     background: {
       default: '#0B0C0D',
       paper: '#1C1E21',
+      light: '#F2F4F7',
     },
     text: {
       primary: '#ffffff',
       secondary: '#D6D6D6',
+      dark: '#0B0C0D',
     },
     divider: '#333741',
   },

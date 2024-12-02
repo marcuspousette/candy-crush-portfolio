@@ -63,7 +63,7 @@ export default function ProjectCard({
           sx={{
             borderTopLeftRadius: '4px',
             borderTopRightRadius: '4px',
-            height: '100px',
+            height: '130px',
             transform: 'translateY(20px)',
             objectFit: 'cover',
             display: { xs: 'unset', md: 'none' },

@@ -1,18 +1,20 @@
 import React from 'react';
-import { Box, Grid, Typography, Stack, Container } from '@mui/material';
+import { Box, Grid, Typography, Stack, Container, Paper } from '@mui/material';
 import Header from './Header';
 import macHero from '../assets/mac-hero-square.png';
 import CustomButton from './CustomButton';
 
 export default function AboutMe() {
   return (
-    <Box
+    <Paper
       sx={{
         marginTop: 10,
         marginBottom: 10,
-        padding: '40px 0px 100px 0px',
+        padding: '80px 0px 140px 0px',
         backgroundColor: 'background.light',
       }}
+      elevation={12}
+      square
     >
       <Container>
         <Header id="2" text="Om mig" isLight={true} />
@@ -61,6 +63,6 @@ export default function AboutMe() {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </Paper>
   );
 }

@@ -14,7 +14,7 @@ const bgStyle = (top) => ({
 });
 const RootLayout = () => {
   return (
-    <Box>
+    <Box sx={{ paddingBottom: 20 }}>
       <Navbar />
       <Box component="img" src={bg1} alt="" sx={bgStyle(64)} />
       <Box component="img" src={bg2} alt="" sx={bgStyle(0)} />

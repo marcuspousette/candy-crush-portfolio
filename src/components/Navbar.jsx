@@ -19,7 +19,11 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Projects', 'CV', 'Contact'];
+const navItems = [
+  { text: 'Om mig', path: '/about' },
+  { text: 'Projekt', path: '/projects' },
+  { text: 'Kontakt', path: '/contact' },
+];
 
 export default function Navbar(props) {
   const nav = useNavigate();
@@ -41,9 +45,9 @@ export default function Navbar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.text} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -74,27 +78,15 @@ export default function Navbar(props) {
               spacing={2}
               sx={{ display: { sm: 'none', md: 'block', xs: 'none' } }}
             >
-              <Button
-                onClick={() => nav('/about')}
-                variant="text"
-                sx={{ color: 'text.primary' }}
-              >
-                Om mig
-              </Button>
-              <Button
-                onClick={() => nav('/projects')}
-                variant="text"
-                sx={{ color: 'text.primary' }}
-              >
-                Projekt
-              </Button>
-              <Button
-                onClick={() => nav('/contact')}
-                variant="text"
-                sx={{ color: 'text.primary' }}
-              >
-                Kontakt
-              </Button>
+              {navItems.map((item) => (
+                <Button
+                  onClick={() => nav(item.path)}
+                  variant="text"
+                  sx={{ color: 'text.primary' }}
+                >
+                  {item.text}
+                </Button>
+              ))}
             </Stack>
             <CustomButton
               onClick={() => {}}

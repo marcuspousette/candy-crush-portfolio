@@ -13,10 +13,10 @@ export default function Header({ id, text, isLight }) {
       alignItems={'center'}
       sx={{ marginBottom: 8 }}
     >
-      <Typography color="primary" variant="h5">
+      <Typography color="primary" variant="h4">
         0{id}.
       </Typography>
-      <Typography color={getHeaderColor()} variant="h5">
+      <Typography color={getHeaderColor()} variant="h4">
         {text}
       </Typography>
     </Stack>

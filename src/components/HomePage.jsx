@@ -5,6 +5,7 @@ import Statistics from './Statistics';
 import Projects from './Projects';
 import { Box, Container } from '@mui/material';
 import AboutMe from './AboutMe';
+import ContactMe from './ContactMe';
 
 export default function HomePage() {
   return (
@@ -15,6 +16,10 @@ export default function HomePage() {
       <AboutMe />
       <Container>
         <Projects />
+      </Container>
+      <ReviewSection />
+      <Container>
+        <ContactMe />
       </Container>
     </Box>
   );

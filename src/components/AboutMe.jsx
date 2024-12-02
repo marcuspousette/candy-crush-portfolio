@@ -21,7 +21,7 @@ export default function AboutMe() {
         <Grid
           container
           alignItems={'center'}
-          justifyContent={'center'}
+          justifyContent={'space-between'}
           spacing={4}
         >
           <Grid item sx={12} md={6} lg={4}>

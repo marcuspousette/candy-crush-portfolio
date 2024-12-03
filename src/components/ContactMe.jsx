@@ -7,7 +7,7 @@ const linkedinProfile =
   'https://www.linkedin.com/in/marcus-pousette-a99590108/';
 export default function ContactMe() {
   return (
-    <Box>
+    <Box id="contact">
       <Header id="5" text="Kontakta mig" isLight={false} />
 
       <Container maxWidth="sm">

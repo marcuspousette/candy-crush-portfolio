@@ -58,7 +58,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Box sx={{ paddingBottom: 20 }}>
+    <Box sx={{ paddingBottom: 20 }} id="projects">
       <Header id="3" text="Några saker jag byggt" color="" />
       <Stack direction={'column'} spacing={14}>
         {projects.map((project) => (

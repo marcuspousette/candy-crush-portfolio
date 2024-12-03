@@ -24,6 +24,7 @@ export default function ReviewSection() {
   return (
     <>
       <Paper
+        id="reviews"
         sx={{
           marginTop: 10,
           marginBottom: 10,

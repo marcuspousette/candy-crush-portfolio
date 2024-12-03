@@ -17,12 +17,14 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import { NavHashLink } from 'react-router-hash-link';
 
 const drawerWidth = 240;
 const navItems = [
-  { text: 'Om mig', path: '/about' },
-  { text: 'Projekt', path: '/projects' },
-  { text: 'Kontakt', path: '/contact' },
+  { text: 'Om mig', path: '/#about' },
+  { text: 'Projekt', path: '/#projects' },
+  { text: 'Omdömen', path: '/#reviews' },
+  { text: 'Kontakt', path: '/#contact' },
 ];
 
 export default function Navbar(props) {
@@ -80,7 +82,9 @@ export default function Navbar(props) {
             >
               {navItems.map((item) => (
                 <Button
-                  onClick={() => nav(item.path)}
+                  component={NavHashLink}
+                  to={item.path}
+                  smooth
                   variant="text"
                   sx={{ color: 'text.primary' }}
                 >

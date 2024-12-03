@@ -26,11 +26,6 @@ const routesFromElements = createRoutesFromElements(
       element={<ProjectPage />}
       errorElement={<NotFound />}
     />
-    <Route
-      path="contact"
-      element={<ProjectPage />}
-      errorElement={<NotFound />}
-    />
   </Route>
 );
 const router = createBrowserRouter(routesFromElements);

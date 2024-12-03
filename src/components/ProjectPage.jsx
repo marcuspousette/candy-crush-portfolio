@@ -1,5 +1,11 @@
+import { Container } from '@mui/material';
 import React from 'react';
+import Projects from './Projects';
 
 export default function ProjectPage() {
-  return <div>ProjectPage</div>;
+  return (
+    <Container>
+      <Projects />
+    </Container>
+  );
 }

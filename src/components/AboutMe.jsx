@@ -7,6 +7,7 @@ import CustomButton from './CustomButton';
 export default function AboutMe() {
   return (
     <Paper
+      id="about"
       sx={{
         marginTop: 10,
         marginBottom: 10,

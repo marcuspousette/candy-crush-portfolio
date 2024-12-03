@@ -10,7 +10,7 @@ export default function Header({ id, text, isLight }) {
     <Stack
       direction={'row'}
       spacing={2}
-      alignItems={'center'}
+      alignItems={'start'}
       sx={{ marginBottom: 8 }}
     >
       <Typography color="primary" variant="h4">

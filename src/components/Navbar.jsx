@@ -48,7 +48,12 @@ export default function Navbar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.text} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton
+              sx={{ textAlign: 'center' }}
+              component={NavHashLink}
+              to={item.path}
+              smooth
+            >
               <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>

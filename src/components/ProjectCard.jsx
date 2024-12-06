@@ -1,6 +1,6 @@
-import { Box, Grid, Paper, Typography, Stack, IconButton } from '@mui/material';
-import { useMediaQuery } from '@mui/material';
-import React from 'react';
+import { Box, Grid, Paper, Typography, Stack, IconButton } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
+import React from "react";
 
 export default function ProjectCard({
   img,
@@ -10,7 +10,7 @@ export default function ProjectCard({
   listOfTechStack,
   rightAlign,
 }) {
-  const isPhone = useMediaQuery((theme) => theme.breakpoints.down('md'));
+  const isPhone = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   const setRightAlignment = () => {
     if (isPhone) {
@@ -23,20 +23,20 @@ export default function ProjectCard({
   return (
     <Grid
       container
-      justifyContent={'center'}
-      alignItems={'center'}
-      direction={setRightAlignment() ? 'row' : 'row-reverse'}
+      justifyContent={"center"}
+      alignItems={"center"}
+      direction={setRightAlignment() ? "row" : "row-reverse"}
     >
       <Grid item xs={12} md={7}>
         <Box
           component="img"
           src={img}
-          width={'100%'}
+          width={"100%"}
           sx={{
             borderRadius: 1,
-            height: { xs: '70px', md: 'unset' },
-            objectFit: 'cover',
-            display: { xs: 'none', md: 'unset' },
+            height: { xs: "70px", md: "unset" },
+            objectFit: "cover",
+            display: { xs: "none", md: "unset" },
           }}
         />
       </Grid>
@@ -44,7 +44,7 @@ export default function ProjectCard({
         item
         xs={12}
         md={5}
-        sx={{ textAlign: setRightAlignment() ? 'right' : 'left' }}
+        sx={{ textAlign: setRightAlignment() ? "right" : "left" }}
       >
         <Typography variant="body1" color="primary">
           Nya projekt
@@ -59,53 +59,53 @@ export default function ProjectCard({
         <Box
           component="img"
           src={img}
-          width={'100%'}
+          width={"100%"}
           sx={{
-            borderTopLeftRadius: '4px',
-            borderTopRightRadius: '4px',
-            height: '130px',
-            transform: 'translateY(20px)',
-            objectFit: 'cover',
-            display: { xs: 'unset', md: 'none' },
+            borderTopLeftRadius: "4px",
+            borderTopRightRadius: "4px",
+            height: "130px",
+            transform: "translateY(20px)",
+            objectFit: "cover",
+            display: { xs: "unset", md: "none" },
           }}
         />
         <Paper
           elevation={4}
           sx={{
             padding: 4,
-            textAlign: setRightAlignment() ? 'right' : 'left',
-            width: { xs: 'unset', md: '110%' },
+            textAlign: setRightAlignment() ? "right" : "left",
+            width: { xs: "unset", md: "110%" },
             transform: {
-              xs: 'unset',
-              md: setRightAlignment() ? 'translateX(-9%)' : 'translateX(0)',
+              xs: "unset",
+              md: setRightAlignment() ? "translateX(-9%)" : "translateX(0)",
             },
-            boxSizing: { xs: 'unset', md: 'border-box' },
+            boxSizing: { xs: "unset", md: "border-box" },
             marginBottom: 2,
           }}
         >
           <Typography>{description}</Typography>
         </Paper>
         <Stack
-          direction={'row'}
+          direction={"row"}
           spacing={2}
-          justifyContent={setRightAlignment() ? 'end' : 'start'}
+          justifyContent={setRightAlignment() ? "end" : "start"}
           sx={{ marginBottom: 2 }}
         >
           {listOfTechStack.map((tech, i) => (
-            <Typography id={i} variant="body1" color="text.secondary">
+            <Typography key={i} variant="body1" color="text.secondary">
               {tech}
             </Typography>
           ))}
         </Stack>
         <Stack
-          direction={'row'}
-          justifyContent={setRightAlignment() ? 'end' : 'start'}
+          direction={"row"}
+          justifyContent={setRightAlignment() ? "end" : "start"}
         >
           {links.map(({ Icon, href }, i) => (
             <IconButton
-              sx={{ color: 'text.secondary' }}
-              onClick={() => window.open(href, '_blank')}
-              id={i}
+              sx={{ color: "text.secondary" }}
+              onClick={() => window.open(href, "_blank")}
+              key={i}
             >
               <Icon />
             </IconButton>

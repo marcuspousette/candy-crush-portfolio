@@ -1,30 +1,30 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Container } from '@mui/material';
-import logo from '../assets/logo-full-white.png';
-import { useNavigate, Link } from 'react-router-dom';
-import CustomButton from './CustomButton';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import { NavHashLink } from 'react-router-hash-link';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Container } from "@mui/material";
+import logo from "../assets/logo-full-white.png";
+import { useNavigate, Link } from "react-router-dom";
+import CustomButton from "./CustomButton";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { NavHashLink } from "react-router-hash-link";
 
 const drawerWidth = 240;
 const navItems = [
-  { text: 'Om mig', path: '/#about' },
-  { text: 'Projekt', path: '/#projects' },
-  { text: 'Omdömen', path: '/#reviews' },
-  { text: 'Kontakt', path: '/#contact' },
+  { text: "Om mig", path: "/#about" },
+  { text: "Projekt", path: "/#projects" },
+  { text: "Omdömen", path: "/#reviews" },
+  { text: "Kontakt", path: "/#contact" },
 ];
 
 export default function Navbar(props) {
@@ -37,19 +37,19 @@ export default function Navbar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <img
         src={logo}
         alt="Techover"
-        width={'150px'}
-        style={{ margin: '8px 0px' }}
+        width={"150px"}
+        style={{ margin: "8px 0px" }}
       />
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item.text} disablePadding>
+        {navItems.map((item, i) => (
+          <ListItem key={i} disablePadding>
             <ListItemButton
-              sx={{ textAlign: 'center' }}
+              sx={{ textAlign: "center" }}
               component={NavHashLink}
               to={item.path}
               smooth
@@ -71,27 +71,28 @@ export default function Navbar(props) {
         <Container>
           <Toolbar
             sx={{
-              padding: '0px !important',
-              display: 'flex',
-              justifyContent: 'space-between',
+              padding: "0px !important",
+              display: "flex",
+              justifyContent: "space-between",
             }}
           >
             <Link to="/">
-              <img src={logo} alt="Techover" width={'150px'} />
+              <img src={logo} alt="Techover" width={"150px"} />
             </Link>
 
             <Stack
               direction="row"
               spacing={2}
-              sx={{ display: { sm: 'none', md: 'block', xs: 'none' } }}
+              sx={{ display: { sm: "none", md: "block", xs: "none" } }}
             >
-              {navItems.map((item) => (
+              {navItems.map((item, i) => (
                 <Button
+                  key={i}
                   component={NavHashLink}
                   to={item.path}
                   smooth
                   variant="text"
-                  sx={{ color: 'text.primary' }}
+                  sx={{ color: "text.primary" }}
                 >
                   {item.text}
                 </Button>
@@ -99,7 +100,7 @@ export default function Navbar(props) {
             </Stack>
             <CustomButton
               onClick={() => {}}
-              sx={{ display: { sm: 'none', xs: 'none', md: 'block' } }}
+              sx={{ display: { sm: "none", xs: "none", md: "block" } }}
             >
               Hämta CV
             </CustomButton>
@@ -108,8 +109,8 @@ export default function Navbar(props) {
               edge="start"
               onClick={handleDrawerToggle}
               sx={{
-                color: 'text.primary',
-                display: { sm: 'block', md: 'none' },
+                color: "text.primary",
+                display: { sm: "block", md: "none" },
               }}
             >
               <MenuIcon />
@@ -127,10 +128,11 @@ export default function Navbar(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'block', md: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
+            display: { xs: "block", sm: "block", md: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor: "background.default",
             },
           }}
         >

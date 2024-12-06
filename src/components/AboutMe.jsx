@@ -1,18 +1,23 @@
-import React from 'react';
-import { Box, Grid, Typography, Stack, Container, Paper } from '@mui/material';
-import Header from './Header';
-import macHero from '../assets/mac-hero-square.png';
-import CustomButton from './CustomButton';
+import React from "react";
+import { Box, Grid, Typography, Stack, Container, Paper } from "@mui/material";
+import Header from "./Header";
+import CustomButton from "./CustomButton";
 
-export default function AboutMe() {
+export default function AboutMe({
+  title,
+  subtitle,
+  cta,
+  statistics,
+  profilePicture,
+}) {
   return (
     <Paper
       id="about"
       sx={{
         marginTop: 10,
         marginBottom: 10,
-        padding: '80px 0px 140px 0px',
-        backgroundColor: 'background.light',
+        padding: "80px 0px 140px 0px",
+        backgroundColor: "background.light",
       }}
       elevation={12}
       square
@@ -21,45 +26,38 @@ export default function AboutMe() {
         <Header id="2" text="Om mig" isLight={true} />
         <Grid
           container
-          alignItems={'center'}
-          justifyContent={'space-between'}
+          alignItems={"center"}
+          justifyContent={"space-between"}
           spacing={4}
         >
-          <Grid item sx={12} md={6} lg={4}>
-            <Box component={'img'} src={macHero} width="100%" />
+          <Grid item xs={12} md={6} lg={4}>
+            <Box component={"img"} src={profilePicture} width="100%" />
           </Grid>
-          <Grid item sx={12} md={6} lg={6}>
-            <Stack direction={'column'} spacing={4}>
+          <Grid item xs={12} md={6} lg={6}>
+            <Stack direction={"column"} spacing={4}>
               <Typography
                 variant="h3"
-                color={'text.dark'}
-                sx={{ fontWeight: '600' }}
+                color={"text.dark"}
+                sx={{ fontWeight: "600" }}
               >
-                Marcus Pousette
+                {title}
               </Typography>
-              <Typography variant="body1" color={'text.dark'}>
-                Jag hjälper företag att öka sin försäljning med smarta
-                webblösningar utan att behöva investera i dyra system.
+              <Typography variant="body1" color={"text.dark"}>
+                {subtitle}
               </Typography>
-              <Stack direction={'row'} spacing={6}>
-                <Box>
-                  <Typography variant="h4" color={'text.dark'} gutterBottom>
-                    1 000 +
-                  </Typography>
-                  <Typography variant="body1" color={'text.dark'}>
-                    Timmar kodat
-                  </Typography>
-                </Box>
-                <Box>
-                  <Typography variant="h4" color={'text.dark'} gutterBottom>
-                    20 +
-                  </Typography>
-                  <Typography variant="body1" color={'text.dark'}>
-                    Projekt byggda
-                  </Typography>
-                </Box>
+              <Stack direction={"row"} spacing={6}>
+                {statistics.map(({ statistic, text }, i) => (
+                  <Box key={i}>
+                    <Typography variant="h4" color={"text.dark"} gutterBottom>
+                      {statistic}
+                    </Typography>
+                    <Typography variant="body1" color={"text.dark"}>
+                      {text}
+                    </Typography>
+                  </Box>
+                ))}
               </Stack>
-              <CustomButton>Ta kontakt</CustomButton>
+              <CustomButton onClick={cta.callback}>{cta.text}</CustomButton>
             </Stack>
           </Grid>
         </Grid>

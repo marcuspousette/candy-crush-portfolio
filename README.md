@@ -218,3 +218,5 @@ After updating the `copy.js` file:
 This template makes it easy for you to present your skills and projects professionally. If you have any issues or questions, feel free to contact the support team.
 
 Happy coding!
+
+// Your biggest fan Marcus Pousette

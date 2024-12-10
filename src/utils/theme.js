@@ -25,24 +25,24 @@ export const themeOptions = {
     },
   },
   palette: {
-    type: 'light',
+    type: "light",
     primary: {
-      main: '#D28E78',
+      main: "#D28E78",
     },
     secondary: {
-      main: '#D7AED8',
+      main: "#D7AED8",
     },
     background: {
-      default: '#0B0C0D',
-      paper: '#1C1E21',
-      light: '#F2F4F7',
+      default: "#0B0C0D",
+      paper: "#1C1E21",
+      light: "#F2F4F7",
     },
     text: {
-      primary: '#ffffff',
-      secondary: '#D6D6D6',
-      dark: '#0B0C0D',
+      primary: "#ffffff",
+      secondary: "#D6D6D6",
+      dark: "#0B0C0D",
     },
-    divider: '#333741',
+    divider: "#333741",
   },
 };
 

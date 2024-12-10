@@ -4,11 +4,6 @@
 body {
   margin: 0px;
   background: rgb(11, 12, 13);
-  /* background: linear-gradient(
-    135deg,
-    rgba(11, 12, 13, 1) 0%,
-    rgba(28, 30, 33, 1) 100%
-  ); */
   min-height: 100vh;
   overflow-x: hidden;
 }

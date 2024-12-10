@@ -32,6 +32,10 @@ export default function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  const handleResumeClick = () => {
+    // Send the user to a link where you host your CV
+  };
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -99,7 +103,7 @@ export default function Navbar(props) {
               ))}
             </Stack>
             <CustomButton
-              onClick={() => {}}
+              onClick={handleResumeClick}
               sx={{ display: { sm: "none", xs: "none", md: "block" } }}
             >
               Hämta CV
